@@ -16,6 +16,7 @@ public class MainMenuButtons : MonoBehaviour
         quitButton = GameObject.Find("QuitButton").GetComponent<Button>();
 
         startButton.onClick.AddListener(StartGame);
+        quitButton.onClick.AddListener(QuitGame);
     }
 
     // Update is called once per frame
@@ -26,6 +27,12 @@ public class MainMenuButtons : MonoBehaviour
 
     void StartGame()
     {
+        SceneManager.LoadScene("Level1");
+    }
 
+    void QuitGame()
+    {
+        Debug.Log("Quitting...");
+        Application.Quit();
     }
 }
