@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 1906173893}
   - component: {fileID: 1906173892}
   m_Layer: 5
-  m_Name: Title Text (2)
+  m_Name: Rose Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 1910753873}
   - component: {fileID: 1910753872}
   m_Layer: 5
-  m_Name: Title Text (1)
+  m_Name: Prince Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

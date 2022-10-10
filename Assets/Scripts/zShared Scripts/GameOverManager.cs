@@ -9,13 +9,16 @@ public class GameOverManager : MonoBehaviour
 {
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
+    public GameObject blackUIPanel;
     public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         retryButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
+        blackUIPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +33,15 @@ public class GameOverManager : MonoBehaviour
 
     void GameOver()
     {
-        return;
+        Time.timeScale = 0.0f;
+        retryButton.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
+        blackUIPanel.SetActive(true);
+        retryButton.onClick.AddListener(Retry);
+    }
+
+    void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
