@@ -10,13 +10,11 @@ public class Level2Controller : MonoBehaviour
     public float speed = 2f;
     public Rigidbody2D rb;
 
-    public float screenWidth;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        screenWidth = Screen.width;
     }
 
     // Update is called once per frame
@@ -38,6 +36,11 @@ public class Level2Controller : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("collided");
     }
 
 }
