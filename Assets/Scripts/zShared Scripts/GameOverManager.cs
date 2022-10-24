@@ -31,7 +31,7 @@ public class GameOverManager : MonoBehaviour
         //}
     }
 
-    void GameOver()
+    public void GameOver()
     {
         Time.timeScale = 0.0f;
         retryButton.gameObject.SetActive(true);

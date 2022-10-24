@@ -5,22 +5,26 @@ using UnityEngine;
 public class Level2Controller : MonoBehaviour
 {
 
-    Touch touch;
+    [SerializeField] Touch touch;
+    [SerializeField] Rigidbody2D rb;
 
-    public float speed = 2f;
-    public Rigidbody2D rb;
-
+    public int health;
+    public GameOverManager gmover;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(health == 0)
+        {
+            gmover.GameOver();
+        }
     }
 
     void FixedUpdate()
@@ -40,6 +44,10 @@ public class Level2Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(health > 0)
+        {
+            health--;
+        }
         Debug.Log("collided");
     }
 
