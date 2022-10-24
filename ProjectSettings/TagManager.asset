@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Star
   - Planet
+  - Canvas
+  - Asteroid
   layers:
   - Default
   - TransparentFX

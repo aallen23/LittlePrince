@@ -8,6 +8,8 @@ public class Level2Controller : MonoBehaviour
     [SerializeField] Touch touch;
     [SerializeField] Rigidbody2D rb;
 
+    [SerializeField] Timer timer;
+
     public int health;
     public GameOverManager gmover;
 
@@ -23,21 +25,24 @@ public class Level2Controller : MonoBehaviour
     {
         if(health == 0)
         {
-            gmover.GameOver();
+            //gmover.GameOver();
         }
     }
 
     void FixedUpdate()
     {
-
-        if(Input.touchCount > 0)
+        if (timer.timer)
         {
-            touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            if (Input.touchCount > 0)
             {
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
-                rb.MovePosition(touchPosition);
+                touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                {
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
+                    rb.MovePosition(touchPosition);
+                }
             }
+
         }
 
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level2Travel : MonoBehaviour
 {
     [SerializeField] float starSpeed = 10.0f;
-    [SerializeField] float planetSpeed = 5.0f;
+    [SerializeField] float planetSpeed = 8.0f;
 
     private float Xbound = -25.0f;
 
@@ -22,9 +22,20 @@ public class Level2Travel : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * starSpeed, Camera.main.transform);
         }
-        if (gameObject.CompareTag("Planet"))
+        if (gameObject.CompareTag("Asteroid"))
         {
             transform.Translate(Vector3.left * Time.deltaTime * planetSpeed, Camera.main.transform);
+        }
+        if (gameObject.CompareTag("Planet"))
+        {
+            if(transform.position.x > 5)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * planetSpeed, Camera.main.transform);
+            }
+            else
+            {
+                transform.position = new Vector3(5, 0, 0);
+            }
         }
 
         if (transform.position.x <= Xbound)
