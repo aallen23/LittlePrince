@@ -10,8 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 tapPosition;
     private Rigidbody2D rb;
+    private TimeIsUp timeIsUp;
     public TextMeshProUGUI flowerText;
-    public float flowerScore;
+    public int flowerScore;
     public int flowerHS;
     private float moveSpeed = 20.0f;
 
@@ -19,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        flowerScore = 0.0f;
+        timeIsUp = GameObject.Find("GameOverManager").GetComponent<TimeIsUp>();
+        flowerScore = 0;
         flowerHS = PlayerPrefs.GetInt("FlowerHighScore");
         flowerText.text = "Flowers: " + flowerScore;
     }
@@ -54,7 +56,16 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
+        }
 
+        if (timer.timeLeft <= 0)
+        {
+            if (flowerScore > flowerHS)
+            {
+                flowerHS = flowerScore;
+                PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
+            }
+            timeIsUp.TimeUp();
         }
     }
 
