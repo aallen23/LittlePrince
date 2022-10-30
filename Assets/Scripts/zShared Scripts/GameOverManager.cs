@@ -40,8 +40,11 @@ public class GameOverManager : MonoBehaviour
         retryButton.onClick.AddListener(Retry);
     }
 
-    void Retry()
+    public void Retry()
     {
+        retryButton.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+        blackUIPanel.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

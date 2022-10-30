@@ -10,6 +10,7 @@ public class Level2Spawn : MonoBehaviour
     [SerializeField] GameObject[] spacePrefabs;
     [SerializeField] GameObject planet;
     [SerializeField] Vector2 spawnPos;
+    [SerializeField] GameObject spawnHolder;
 
     [SerializeField] int index;
     [SerializeField] int length;
@@ -55,7 +56,7 @@ public class Level2Spawn : MonoBehaviour
             index = Random.Range(0, length);
             size = Random.Range(0.5f, 1.5f);
 
-            GameObject spaceObj = Instantiate(spacePrefabs[index], spawnPos, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            GameObject spaceObj = Instantiate(spacePrefabs[index], spawnPos, Quaternion.Euler(0, 0, Random.Range(0, 360)), spawnHolder.transform);
             spaceObj.transform.localScale = new Vector2(size, size);
 
             yield return new WaitForSeconds(spawnInterval);
