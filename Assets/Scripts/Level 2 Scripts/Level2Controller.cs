@@ -110,12 +110,17 @@ public class Level2Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(health > 0 && !immune && timer.timer)
+        if (!immune)
         {
-            health--;
-            UpdateHealthBar();
-            StartCoroutine(SpriteFlicker());
+            if (health > 0 && timer.timer)
+            {
+                health--;
+                UpdateHealthBar();
+                immune = true;
+                StartCoroutine(SpriteFlicker());
+            }
         }
+
     }
 
     IEnumerator Lerp(Vector3 targetPos)
@@ -132,16 +137,16 @@ public class Level2Controller : MonoBehaviour
 
     IEnumerator SpriteFlicker()
     {
-        immune = true;
         if (immune)
         {
             for(int i = 0; i < flickerCount; i++)
             {
                 spriteRenderer.enabled = !(spriteRenderer.enabled);
                 yield return new WaitForSeconds(flickerDuration);
-                immune = false;
             }
         }
+
+        immune = false;
     }
 
     IEnumerator Shrink()
