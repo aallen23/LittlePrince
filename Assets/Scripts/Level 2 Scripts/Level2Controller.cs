@@ -10,8 +10,6 @@ public class Level2Controller : MonoBehaviour
 {
 
     [SerializeField] Touch touch;
-    [SerializeField] Rigidbody2D rb;
-
     [SerializeField] Timer timer;
 
     public float screenHeight;
@@ -42,7 +40,6 @@ public class Level2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         screenHeight = Screen.height;
         xBound = -8.0f;
