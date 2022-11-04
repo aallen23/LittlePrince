@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
                 flowerHS = flowerScore;
                 PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
             }
+            PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
             timeIsUp.TimeUp();
         }
     }

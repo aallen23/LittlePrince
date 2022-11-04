@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ControllerScript : MonoBehaviour
 {
     [SerializeField] Timer timer;
     public TextMeshProUGUI trustText;
-    private float princeTrust = 75.0f;
+    public TextMeshProUGUI gameOverText;
+    public Button retryButton;
+    public GameObject blackUIPanel;
+    private float princeTrust = 74.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +40,17 @@ public class ControllerScript : MonoBehaviour
 
     void GameOver()
     {
+        retryButton.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
+        blackUIPanel.SetActive(true);
+    }
 
+    void Retry()
+    {
+        retryButton.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+        blackUIPanel.SetActive(false);
+        SceneManager.LoadScene("Level4");
     }
 
     void GameWon()
