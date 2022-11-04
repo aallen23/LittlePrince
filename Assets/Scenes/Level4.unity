@@ -2751,8 +2751,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Level2Controller, Assembly-CSharp
+      - m_Target: {fileID: 1393040511}
+        m_TargetAssemblyTypeName: ControllerScript, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:

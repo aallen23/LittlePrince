@@ -12,7 +12,7 @@ public class ControllerScript : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
     public GameObject blackUIPanel;
-    private float princeTrust = 74.0f;
+    private float princeTrust = 75.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,7 @@ public class ControllerScript : MonoBehaviour
         blackUIPanel.SetActive(true);
     }
 
-    void Retry()
+    public void Retry()
     {
         retryButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);

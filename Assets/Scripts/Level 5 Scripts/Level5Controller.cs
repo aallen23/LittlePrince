@@ -44,6 +44,11 @@ public class Level5Controller : MonoBehaviour
                 }
             }
         }
+
+        if (!timer.timer)
+        {
+            Ending();
+        }
     }
 
     public void GameOver()
@@ -61,5 +66,8 @@ public class Level5Controller : MonoBehaviour
         SceneManager.LoadScene("Level5");
     }
 
-
+    public void Ending()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }
