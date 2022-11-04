@@ -158,6 +158,7 @@ public class Level2Controller : MonoBehaviour
             yield return null;
         }
         transform.localScale = targetScale;
+        NextLevel();
     }
 
     public void IdentifyPlanet()
@@ -211,6 +212,11 @@ public class Level2Controller : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         blackUIPanel.SetActive(false);
         SceneManager.LoadScene("Level2");
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Level4");
     }
 
 }
