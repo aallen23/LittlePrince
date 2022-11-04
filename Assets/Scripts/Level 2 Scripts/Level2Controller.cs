@@ -46,7 +46,7 @@ public class Level2Controller : MonoBehaviour
         yBound = 3.0f;
         lerp = 8.0f;
         shrink = 50.0f;
-        health = 3;
+        health = 4;
         flickerCount = 6;
         flickerDuration = 0.2f;
         immune = false;
