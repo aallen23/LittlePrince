@@ -9,11 +9,13 @@ TagManager:
   - Canvas
   - Asteroid
   - Flower
+  - Watering Can
+  - Spikes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BG
   - Water
   - UI
   - 
