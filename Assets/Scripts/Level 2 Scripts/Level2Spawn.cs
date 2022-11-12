@@ -51,7 +51,7 @@ public class Level2Spawn : MonoBehaviour
         spawn = true;
         while (spawn)
         {
-            spawnInterval = Random.Range(0.0f, 2.0f);
+            spawnInterval = Random.Range(1.0f, 2.0f);
             spawnPos = new Vector2(Xspawn, (Random.Range(-Yspawn, Yspawn)));
             index = Random.Range(0, length);
             size = Random.Range(0.5f, 1.5f);

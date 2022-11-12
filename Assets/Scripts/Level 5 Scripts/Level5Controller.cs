@@ -53,27 +53,7 @@ public class Level5Controller : MonoBehaviour
         {
             Ending();
         }
-        //if (Input.touchCount > 0)
-        //{
-        //    touch = Input.GetTouch(0);
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-        //        Debug.Log("touched");
-        //        Ray ray = Camera.main.ScreenPointToRay(touch.position);
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(ray.origin, ray.direction, out hit))
-        //        {
-        //            if (hit.collider.gameObject != null)
-        //            {
-        //                Debug.Log("collided");
-        //                if (hit.collider.gameObject.CompareTag("Watering Can"))
-        //                {
-        //                    Debug.Log("watering can");
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
+
 
     }
 
@@ -91,6 +71,11 @@ public class Level5Controller : MonoBehaviour
         if (other.CompareTag("Rose") && carrying)
         {
             //water rose here
+        }
+        if (other.CompareTag("Wall"))
+        {
+            //flip barricade up here
+            //do a rotation lerp && set a rotation trigger bool
         }
     }
 

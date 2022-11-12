@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Level2Travel : MonoBehaviour
 {
-    [SerializeField] float starSpeed = 5.0f;
-    [SerializeField] float planetSpeed = 10.0f;
+    [SerializeField] float starSpeed = 2.0f;
+    [SerializeField] float planetSpeed = 3.0f;
 
     private float Xbound = -25.0f;
 

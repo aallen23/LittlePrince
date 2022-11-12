@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundScroller : MonoBehaviour
 {
 
-    private float speed = 5.0f;
+    private float speed = 2.0f;
     private Vector3 startPos;
     private float repeatWidth;
     [SerializeField] Timer timer;
