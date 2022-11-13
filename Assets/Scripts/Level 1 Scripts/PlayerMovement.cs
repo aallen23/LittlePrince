@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
                 {
-                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
+                    //Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, Mathf.Clamp(touch.position.y, -3, 2)));
                     if (touchPosition.y < 2 && touchPosition.y > -3)
                     {
                         rb.transform.position = Vector2.Lerp(rb.transform.position, touchPosition, Time.deltaTime);
