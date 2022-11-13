@@ -38,23 +38,32 @@ public class PlayerMovement : MonoBehaviour
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
                 {
-                    //Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
-                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, Mathf.Clamp(touch.position.y, -3, 2)));
-                    if (touchPosition.y < 2 && touchPosition.y > -3)
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
+                    //Vector2 touchPosition = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, Mathf.Clamp(touch.position.y, -3, 2)));
+                    //if (touchPosition.y < 2 && touchPosition.y > -3)
+                    //{
+                    rb.transform.position = Vector2.Lerp(rb.transform.position, touchPosition, Time.deltaTime);
+                    Debug.Log("Told to move");
+                    if (rb.transform.position.y < -3)
                     {
-                        rb.transform.position = Vector2.Lerp(rb.transform.position, touchPosition, Time.deltaTime);
-                        Debug.Log("Told to move");
-                        if (touchPosition.x > rb.transform.position.x)
-                        {
-                            if (rb.transform.localScale.x < 0)
-                            rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
-                        }
-                        else if (touchPosition.x < rb.transform.position.x)
-                        {
-                            if (rb.transform.localScale.x > 0)
-                                rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
-                        }
+                        rb.transform.position = new Vector2(rb.transform.position.x, -3);
                     }
+                    if (rb.transform.position.y > 2)
+                    {
+                        rb.transform.position = new Vector2(rb.transform.position.x, 2);
+                    }
+
+                    if (touchPosition.x > rb.transform.position.x)
+                    {
+                        if (rb.transform.localScale.x < 0)
+                        rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
+                    }
+                    else if (touchPosition.x < rb.transform.position.x)
+                    {
+                        if (rb.transform.localScale.x > 0)
+                        rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
+                    }
+                    //}
                 }
             }
         }
