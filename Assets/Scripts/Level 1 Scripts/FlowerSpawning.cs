@@ -34,7 +34,7 @@ public class FlowerSpawning : MonoBehaviour
     {
         int flowerIndex = Random.Range(0, flowerPrefabs.Length);
         //Vector2 circlePoint = Random.insideUnitCircle.normalized * Random.Range(minDistance, minDistance+4);
-        worldPoint = player.position;
+        //worldPoint = player.position;
         //worldPoint.x += circlePoint.x;
         //worldPoint.y += circlePoint.y;
 
