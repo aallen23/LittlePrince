@@ -36,7 +36,7 @@ public class FlowerSpawning : MonoBehaviour
         worldPoint.x += circlePoint.x;
         worldPoint.y += circlePoint.y;
 
-        // If the randomly chosen spawn point is within bounds, spawn it if health is greater than 0
+        // If the randomly chosen spawn point is within bounds, spawn it if timer is active
         if ((worldPoint.x < spawnRangeX && worldPoint.x > -spawnRangeX) && (worldPoint.y < spawnRangeY && worldPoint.y > -spawnRangeY))
         {
             if (Timer.timer && spawnerObject.transform.childCount < 10)
