@@ -38,13 +38,12 @@ public class FlowerSpawning : MonoBehaviour
         //worldPoint.x += circlePoint.x;
         //worldPoint.y += circlePoint.y;
 
-        StartCoroutine("FindSpawnPoint");
-
         // If the randomly chosen spawn point is within bounds, spawn it if health is greater than 0
         //if ((worldPoint.x < spawnRangeX && worldPoint.x > -spawnRangeX) && (worldPoint.y < spawnRangeY && worldPoint.y > -spawnRangeY))
         //{
             if (Timer.timer && spawnerObject.transform.childCount < 10)
             {
+                StartCoroutine("FindSpawnPoint");
                 Instantiate(flowerPrefabs[flowerIndex], worldPoint, flowerPrefabs[flowerIndex].transform.rotation, spawnerObject.gameObject.transform);
             }
         //}
