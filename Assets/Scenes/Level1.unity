@@ -2382,6 +2382,7 @@ MonoBehaviour:
   - {fileID: 2314266767254969027, guid: f804155bcd6603647bbb8ca2353eb155, type: 3}
   - {fileID: 8001931818476992167, guid: e3cd5cbc85cd3e94391479816c6e5052, type: 3}
   Player: {fileID: 508346310}
+  spawnerObject: {fileID: 1465365441}
   player: {fileID: 508346312}
 --- !u!1001 &1494168323
 PrefabInstance:

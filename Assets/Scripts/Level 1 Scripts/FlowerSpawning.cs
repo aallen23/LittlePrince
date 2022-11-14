@@ -6,6 +6,7 @@ public class FlowerSpawning : MonoBehaviour
 {
     public GameObject[] flowerPrefabs;
     public GameObject Player;
+    public GameObject spawnerObject;
     public Transform player;
     private Timer Timer;
     private float minDistance = 2.4f;
@@ -38,9 +39,9 @@ public class FlowerSpawning : MonoBehaviour
         // If the randomly chosen spawn point is within bounds, spawn it if health is greater than 0
         if ((worldPoint.x < spawnRangeX && worldPoint.x > -spawnRangeX) && (worldPoint.y < spawnRangeY && worldPoint.y > -spawnRangeY))
         {
-            if (Timer.timer)
+            if (Timer.timer && spawnerObject.transform.childCount < 10)
             {
-                Instantiate(flowerPrefabs[flowerIndex], worldPoint, flowerPrefabs[flowerIndex].transform.rotation);
+                Instantiate(flowerPrefabs[flowerIndex], worldPoint, flowerPrefabs[flowerIndex].transform.rotation, spawnerObject.gameObject.transform);
             }
         }
         // If it tries to spawn outside the allowed range, randomly choose new coordinates within ranges
