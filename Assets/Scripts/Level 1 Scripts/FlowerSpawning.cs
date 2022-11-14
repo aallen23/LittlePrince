@@ -47,11 +47,11 @@ public class FlowerSpawning : MonoBehaviour
         // If it tries to spawn outside the allowed range, randomly choose new coordinates within ranges
         else
         {
-            if (Timer.timer)
+            if (Timer.timer && spawnerObject.transform.childCount < 10)
             {
                 worldPoint.x = Random.Range(-spawnRangeX, spawnRangeX);
                 worldPoint.y = Random.Range(-spawnRangeY, spawnRangeY);
-                Instantiate(flowerPrefabs[flowerIndex], worldPoint, flowerPrefabs[flowerIndex].transform.rotation);
+                Instantiate(flowerPrefabs[flowerIndex], worldPoint, flowerPrefabs[flowerIndex].transform.rotation, spawnerObject.gameObject.transform);
             }
         }
     }
