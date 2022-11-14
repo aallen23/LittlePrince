@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 508346313}
   - component: {fileID: 508346314}
   - component: {fileID: 508346315}
+  - component: {fileID: 508346316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -816,6 +817,7 @@ MonoBehaviour:
   flowerText: {fileID: 580747796}
   flowerScore: 0
   flowerHS: 0
+  animator: {fileID: 508346316}
 --- !u!60 &508346315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -955,6 +957,26 @@ PolygonCollider2D:
       - {x: -0.19999999, y: -2.3799999}
       - {x: -0.16, y: -2.32}
       - {x: -0.16, y: -2.1399999}
+--- !u!95 &508346316
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508346310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94146c339a54b2f41beec1e5b4f8f33b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &580747794
 GameObject:
   m_ObjectHideFlags: 0

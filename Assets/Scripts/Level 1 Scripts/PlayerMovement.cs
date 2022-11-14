@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public int flowerScore;
     public int flowerHS;
     private float moveSpeed = 20.0f;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        animator.SetBool("isWalking", false);
+
         //Can tap between y = 2 and y = -3
         //Get tap position then move prince to tap position
         if (timer.timer)
@@ -47,11 +50,13 @@ public class PlayerMovement : MonoBehaviour
                         {
                             if (rb.transform.localScale.x < 0)
                             rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
+                            animator.SetBool("isWalking", true);
                         }
                         else if (touchPosition.x < rb.transform.position.x)
                         {
                             if (rb.transform.localScale.x > 0)
-                                rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
+                            rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
+                            animator.SetBool("isWalking", true);
                         }
                     }
                 }
