@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public int flowerScore;
     public int flowerHS;
     private float moveSpeed = 20.0f;
-    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        animator.SetBool("isWalking", false);
-
         //Can tap between y = 2 and y = -3
         //Get tap position then move prince to tap position
         if (timer.timer)
