@@ -970,6 +970,7 @@ MonoBehaviour:
   flowerText: {fileID: 580747796}
   flowerScore: 0
   flowerHS: 0
+  animator: {fileID: 508346316}
 --- !u!60 &508346315
 PolygonCollider2D:
   m_ObjectHideFlags: 0

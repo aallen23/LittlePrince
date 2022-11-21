@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        animator.SetBool("isWalking", false);
+
         //Can tap between y = 2 and y = -3
         //Get tap position then move prince to tap position
         if (timer.timer)
