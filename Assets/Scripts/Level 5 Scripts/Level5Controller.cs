@@ -18,6 +18,8 @@ public class Level5Controller : MonoBehaviour
     public float lerp;
     public bool moving;
 
+    private GameObject wateringCan;
+
     public bool carrying;
 
     public TextMeshProUGUI gameOverText;
@@ -29,6 +31,7 @@ public class Level5Controller : MonoBehaviour
     void Start()
     {
         lerp = 1.5f;
+        
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class Level5Controller : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                if (touch.phase == TouchPhase.Began)
                 {
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
                     StartCoroutine(Lerp(gameObject.transform.position, touchPos));
@@ -62,7 +65,8 @@ public class Level5Controller : MonoBehaviour
         Debug.Log("collided");
         if (other.gameObject.CompareTag("Watering Can"))
         {
-            PickUpWateringCan(other.gameObject);
+            wateringCan = other.gameObject;
+            PickUpWateringCan(wateringCan);
         }
         if (other.CompareTag("Spikes"))
         {
