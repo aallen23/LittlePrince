@@ -68,12 +68,17 @@ public class Level5Controller : MonoBehaviour
         {
 
         }
-        if (other.CompareTag("Rose") && carrying)
+        if (other.CompareTag("Flower") && carrying)
         {
+            Debug.Log("watering flower");
             //water rose here
+            //animation
+            //return watering can to start position
         }
         if (other.CompareTag("Wall"))
         {
+            Debug.Log("rotate");
+            other.gameObject.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
             //flip barricade up here
             //do a rotation lerp && set a rotation trigger bool
         }

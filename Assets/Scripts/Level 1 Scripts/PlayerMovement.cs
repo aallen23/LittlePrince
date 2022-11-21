@@ -57,13 +57,13 @@ public class PlayerMovement : MonoBehaviour
                     {
                         if (rb.transform.localScale.x < 0)
                         rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
-                        animator.SetBool("isWalking", true);
+                        //animator.SetBool("isWalking", true);
                     }
                     else if (touchPosition.x < rb.transform.position.x)
                     {
                         if (rb.transform.localScale.x > 0)
                         rb.transform.localScale = new Vector2((rb.transform.localScale.x * -1), rb.transform.localScale.y);
-                        animator.SetBool("isWalking", true);
+                        //animator.SetBool("isWalking", true);
                     }
                     //}
                 }
