@@ -31,13 +31,13 @@ public class Level5Controller : MonoBehaviour
     void Start()
     {
         lerp = 1.5f;
-        
+        moving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer.timer)
+        if (timer.timer && moving == false)
         {
             if (Input.touchCount > 0)
             {
@@ -106,11 +106,13 @@ public class Level5Controller : MonoBehaviour
         float time = 0;
         while (time < lerp)
         {
+            moving = true;
             transform.position = Vector3.Lerp(startPos, targetPos, time / lerp);
             time += Time.deltaTime;
             yield return null;
         }
         transform.position = targetPos;
+        moving = false;
     }
 
     public void GameOver()
