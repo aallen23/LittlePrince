@@ -12,6 +12,7 @@ TagManager:
   - Watering Can
   - Spikes
   - Wall
+  - Tiger
   layers:
   - Default
   - TransparentFX

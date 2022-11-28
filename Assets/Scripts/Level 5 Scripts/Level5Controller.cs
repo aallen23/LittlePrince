@@ -21,6 +21,7 @@ public class Level5Controller : MonoBehaviour
 
     private GameObject wateringCan;
     public GameObject rose;
+    public GameObject[] triggers;
 
     private Vector2 wateringCanPos;
     private Vector2 princeOriginalPos;
@@ -30,6 +31,8 @@ public class Level5Controller : MonoBehaviour
 
     public bool carrying;
     public bool watering;
+
+    private Spikes spikes;
 
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
@@ -44,6 +47,7 @@ public class Level5Controller : MonoBehaviour
         watering = false;
         delay = 2.5f;
         princeOriginalPos = transform.position;
+        StartCoroutine(Spawn());
         //start a coroutine that
         //1) pauses for five seconds before spawning starts
         //2) starts spawning process
@@ -87,7 +91,10 @@ public class Level5Controller : MonoBehaviour
         }
         if (other.CompareTag("Spikes"))
         {
-
+            spikes = other.gameObject.GetComponent<Spikes>();
+            spikes.TriggerSpikes();
+            Debug.Log("triggered");
+            StartCoroutine(UntriggerSpikes());
         }
         if (other.CompareTag("Flower") && carrying)
         {
@@ -124,21 +131,8 @@ public class Level5Controller : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(delay);
-        trigger = Random.Range(1, 3);
-        switch(trigger)
-        {
-            case 1:
-              //tiger
-                break;
-            case 2:
-                //water
-                break;
-            case 3:
-                //wind
-                break;
-            default:
-                break;
-        }
+        trigger = Random.Range(0, triggers.Length -1);
+        triggers[trigger].SetActive(true);
     }
 
 
@@ -166,6 +160,13 @@ public class Level5Controller : MonoBehaviour
             wateringCan.transform.position = wateringCanPos;
         }
         //reset watering can to original location once rose is watered
+    }
+
+    IEnumerator UntriggerSpikes()
+    {
+        yield return new WaitForSeconds(delay);
+        spikes.Untrigger();
+        Debug.Log("untriggered");
     }
 
 
