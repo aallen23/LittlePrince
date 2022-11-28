@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq.Expressions;
 
 
 public class Level5Controller : MonoBehaviour
@@ -19,6 +20,10 @@ public class Level5Controller : MonoBehaviour
     public bool moving;
 
     private GameObject wateringCan;
+    private GameObject rose;
+
+    private float delay;
+    private int trigger;
 
     public bool carrying;
 
@@ -32,6 +37,12 @@ public class Level5Controller : MonoBehaviour
     {
         lerp = 1.5f;
         moving = false;
+        delay = 2.5f;
+        //start a coroutine that
+        //1) pauses for five seconds before spawning starts
+        //2) starts spawning process
+        //3) picks spawn integer
+        //4) calls new method based on spawn integer
     }
 
     // Update is called once per frame
@@ -46,7 +57,6 @@ public class Level5Controller : MonoBehaviour
                 {
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
                     StartCoroutine(Lerp(gameObject.transform.position, touchPos));
-                    //transform.position = Vector2.Lerp(transform.position, touchPos, Time.deltaTime);
                     Debug.Log("Told to move");
                 }
             }
@@ -85,21 +95,10 @@ public class Level5Controller : MonoBehaviour
             other.gameObject.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
             //flip barricade up here
             //do a rotation lerp && set a rotation trigger bool
+            //use timer to set barricade to flip back to flat
         }
     }
 
-    public void PickUpWateringCan(GameObject wateringCan)
-    {
-        wateringCan.transform.parent = gameObject.transform;
-        wateringCan.transform.localPosition = new Vector2(-1, 0);
-        carrying = true;
-        Debug.Log("picked up watering can");
-    }
-
-    public void ResetWateringCan()
-    {
-        //reset watering can to original location once rose is watered
-    }
 
     IEnumerator Lerp(Vector3 startPos, Vector3 targetPos)
     {
@@ -114,6 +113,44 @@ public class Level5Controller : MonoBehaviour
         transform.position = targetPos;
         moving = false;
     }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(delay);
+        trigger = Random.Range(1, 3);
+        switch(trigger)
+        {
+            case 1:
+              //tiger
+                break;
+            case 2:
+                //water
+                break;
+            case 3:
+                //wind
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    public void PickUpWateringCan(GameObject wateringCan)
+    {
+        wateringCan.transform.parent = gameObject.transform;
+        wateringCan.transform.localPosition = new Vector2(-1, 0);
+        carrying = true;
+        Debug.Log("picked up watering can");
+        //lerp to rose position
+        StartCoroutine(Lerp(gameObject.transform.position, rose.transform.position));
+        //once lerp is done, return watering can (use cases & booleans to test for watering)
+    }
+
+    public void ResetWateringCan()
+    {
+        //reset watering can to original location once rose is watered
+    }
+
 
     public void GameOver()
     {
