@@ -20,12 +20,16 @@ public class Level5Controller : MonoBehaviour
     public bool moving;
 
     private GameObject wateringCan;
-    private GameObject rose;
+    public GameObject rose;
+
+    private Vector2 wateringCanPos;
+    private Vector2 princeOriginalPos;
 
     private float delay;
     private int trigger;
 
     public bool carrying;
+    public bool watering;
 
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
@@ -37,7 +41,9 @@ public class Level5Controller : MonoBehaviour
     {
         lerp = 1.5f;
         moving = false;
+        watering = false;
         delay = 2.5f;
+        princeOriginalPos = transform.position;
         //start a coroutine that
         //1) pauses for five seconds before spawning starts
         //2) starts spawning process
@@ -48,7 +54,7 @@ public class Level5Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer.timer && moving == false)
+        if (timer.timer && moving == false && watering == false)
         {
             if (Input.touchCount > 0)
             {
@@ -76,7 +82,8 @@ public class Level5Controller : MonoBehaviour
         if (other.gameObject.CompareTag("Watering Can"))
         {
             wateringCan = other.gameObject;
-            PickUpWateringCan(wateringCan);
+            wateringCanPos = wateringCan.transform.position;
+            StartCoroutine(PickUpWateringCan(wateringCan));
         }
         if (other.CompareTag("Spikes"))
         {
@@ -135,19 +142,29 @@ public class Level5Controller : MonoBehaviour
     }
 
 
-    public void PickUpWateringCan(GameObject wateringCan)
+    IEnumerator PickUpWateringCan(GameObject wateringCan)
     {
+        watering = true;
         wateringCan.transform.parent = gameObject.transform;
         wateringCan.transform.localPosition = new Vector2(-1, 0);
-        carrying = true;
         Debug.Log("picked up watering can");
         //lerp to rose position
+        yield return new WaitForSeconds(delay);
         StartCoroutine(Lerp(gameObject.transform.position, rose.transform.position));
+        yield return new WaitForSeconds(5.0f);
+        wateringCan.transform.SetParent(null);
+        ResetWateringCan();
+        StartCoroutine(Lerp(transform.position, princeOriginalPos));
+        watering = false;
         //once lerp is done, return watering can (use cases & booleans to test for watering)
     }
 
     public void ResetWateringCan()
     {
+        if(wateringCan != null)
+        {
+            wateringCan.transform.position = wateringCanPos;
+        }
         //reset watering can to original location once rose is watered
     }
 
