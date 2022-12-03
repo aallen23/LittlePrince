@@ -17,7 +17,7 @@ public class Tiger : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        speed = 2.0f;
+        speed = 3.0f;
         moving = true;
         returning = 1;
     }
@@ -25,7 +25,7 @@ public class Tiger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (moving)
+        if (moving)
         {
             transform.Translate(Vector3.left * targetPos.x * returning * speed * Time.deltaTime);
             transform.Translate(Vector3.up * targetPos.y * returning * speed * Time.deltaTime);
@@ -34,6 +34,8 @@ public class Tiger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("collided");
+
         if (other.CompareTag("Spikes"))
         {
             spikes = other.gameObject.GetComponent<Spikes>();

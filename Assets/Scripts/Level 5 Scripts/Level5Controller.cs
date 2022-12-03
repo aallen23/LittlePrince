@@ -18,6 +18,7 @@ public class Level5Controller : MonoBehaviour
     public bool touching;
     public float lerp;
     public bool moving;
+    public bool spawning;
 
     private GameObject wateringCan;
     public GameObject rose;
@@ -45,8 +46,9 @@ public class Level5Controller : MonoBehaviour
         lerp = 1.5f;
         moving = false;
         watering = false;
-        delay = 2.5f;
+        delay = 4.0f;
         princeOriginalPos = transform.position;
+        spawning = true;
         StartCoroutine(Spawn());
         //start a coroutine that
         //1) pauses for five seconds before spawning starts
@@ -130,9 +132,12 @@ public class Level5Controller : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(delay);
-        trigger = Random.Range(0, triggers.Length -1);
-        triggers[trigger].SetActive(true);
+        while (spawning)
+        {
+            yield return new WaitForSeconds(delay);
+            trigger = Random.Range(0, triggers.Length - 1);
+            triggers[trigger].SetActive(true);
+        }
     }
 
 
