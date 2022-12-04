@@ -23,6 +23,7 @@ public class Level5Controller : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
     public GameObject blackUIPanel;
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class Level5Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isWalking", false);
         if (timer.timer)
         {
             if (Input.touchCount > 0)
@@ -43,6 +45,7 @@ public class Level5Controller : MonoBehaviour
                 {
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
                     StartCoroutine(Lerp(gameObject.transform.position, touchPos));
+                    animator.SetBool("isWalking", true);
                     //transform.position = Vector2.Lerp(transform.position, touchPos, Time.deltaTime);
                     Debug.Log("Told to move");
                 }
