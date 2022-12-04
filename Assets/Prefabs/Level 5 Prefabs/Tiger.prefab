@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0}
+  startPos: {x: 0, y: 0}
 --- !u!50 &3404815433758074376
 Rigidbody2D:
   serializedVersion: 4
@@ -146,4 +147,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7

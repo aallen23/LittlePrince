@@ -64,7 +64,13 @@ public class Level2Controller : MonoBehaviour
 
         if (!timer.timer)
         {
-            
+            //if (flowerScore > flowerHS)
+            //{
+            //    flowerHS = flowerScore;
+            //    PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
+            //}
+            //PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
+            //timeIsUp.TimeUp();
             IdentifyPlanet();
             StartCoroutine(Shrink());
         }

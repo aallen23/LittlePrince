@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Threading;
 using UnityEngine;
 
-public class Tiger : MonoBehaviour
+public class Wind : MonoBehaviour
 {
     public Vector2 targetPos;
     public Vector2 startPos;
     private float speed;
     private bool moving;
-    private int returning;
-    private Spikes spikes;
+    private Barricade wall;
     private Level5Controller player;
 
     // Start is called before the first frame update
@@ -19,9 +16,8 @@ public class Tiger : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Level5Controller>();
         startPos = transform.position;
-        speed = 2.0f;
+        speed = 3.0f;
         moving = true;
-        returning = 1;
     }
 
     // Update is called once per frame
@@ -29,34 +25,47 @@ public class Tiger : MonoBehaviour
     {
         if (moving)
         {
-            transform.Translate(Vector3.left * targetPos.x * returning * speed * Time.deltaTime);
-            transform.Translate(Vector3.up * targetPos.y * returning * speed * Time.deltaTime);
+            transform.Translate(Vector3.left * targetPos.x * speed * Time.deltaTime);
+            transform.Translate(Vector3.up * targetPos.y * speed * Time.deltaTime);
         }
-        if (transform.position.x > 20 || transform.position.x < -20 || transform.position.y < -8 || transform.position.y > 8)
+        if(transform.position.x > 18 || transform.position.x < -18)
         {
             transform.position = startPos;
             gameObject.SetActive(false);
-            returning = 1;
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("collided");
 
-        if (other.CompareTag("Spikes"))
+        if (other.CompareTag("Wall"))
         {
-            spikes = other.gameObject.GetComponent<Spikes>();
-            if(spikes.triggered == true)
+            wall = other.gameObject.GetComponent<Barricade>();
+            if (wall.triggered == true)
             {
-                returning = -1;
+                Reset();
             }
         }
 
         if (other.CompareTag("Flower"))
         {
             player.UpdateHealthBar();
-            returning = -1;
+            Reset();
         }
+
+        
+
     }
+
+    public void Reset()
+    {
+        moving = false;
+        transform.position = startPos;
+        gameObject.SetActive(false);
+        moving = true;
+    }
+
 
 }

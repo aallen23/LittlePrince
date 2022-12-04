@@ -22,18 +22,27 @@ public class Level5Controller : MonoBehaviour
 
     private GameObject wateringCan;
     public GameObject rose;
+    public GameObject speechBubble;
     public GameObject[] triggers;
 
     private Vector2 wateringCanPos;
     private Vector2 princeOriginalPos;
 
     private float delay;
+    private float triggerDelay;
+    private float spawnDelay;
     private int trigger;
 
     public bool carrying;
     public bool watering;
+    public bool roseNeedsWatering;
+    public bool roseIsWatered;
 
     private Spikes spikes;
+    private Barricade wall;
+
+    public int health;
+    public GameObject healthBar;
 
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
@@ -43,10 +52,14 @@ public class Level5Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lerp = 1.5f;
+        health = 4;
+        lerp = 1.0f;
         moving = false;
+        roseNeedsWatering = false;
         watering = false;
-        delay = 4.0f;
+        delay = 1.0f;
+        triggerDelay = 4.0f;
+        spawnDelay = 6.0f;
         princeOriginalPos = transform.position;
         spawning = true;
         StartCoroutine(Spawn());
@@ -60,7 +73,14 @@ public class Level5Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer.timer && moving == false && watering == false)
+
+        if(speechBubble.activeInHierarchy == true)
+        {
+            roseNeedsWatering = true;
+            StartCoroutine(UntriggerSpeechBubble());
+        }
+
+        if (timer.timer && moving == false && watering == false && health > 0)
         {
             if (Input.touchCount > 0)
             {
@@ -74,8 +94,20 @@ public class Level5Controller : MonoBehaviour
             }
         }
 
+        if (health == 0)
+        {
+            GameOver();
+        }
+
         if (!timer.timer)
         {
+            //if (flowerScore > flowerHS)
+            //{
+            //    flowerHS = flowerScore;
+            //    PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
+            //}
+            //PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
+            //timeIsUp.TimeUp();
             Ending();
         }
 
@@ -85,8 +117,10 @@ public class Level5Controller : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("collided");
-        if (other.gameObject.CompareTag("Watering Can"))
+        if (other.gameObject.CompareTag("Watering Can") && roseNeedsWatering)
         {
+            carrying = true;
+            watering = true;
             wateringCan = other.gameObject;
             wateringCanPos = wateringCan.transform.position;
             StartCoroutine(PickUpWateringCan(wateringCan));
@@ -101,6 +135,8 @@ public class Level5Controller : MonoBehaviour
         if (other.CompareTag("Flower") && carrying)
         {
             Debug.Log("watering flower");
+            roseIsWatered = true;
+            speechBubble.SetActive(false);
             //water rose here
             //animation
             //return watering can to start position
@@ -108,7 +144,10 @@ public class Level5Controller : MonoBehaviour
         if (other.CompareTag("Wall"))
         {
             Debug.Log("rotate");
-            other.gameObject.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
+            //other.gameObject.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+            wall = other.gameObject.GetComponent<Barricade>();
+            wall.TriggerBarricade();
+            StartCoroutine(UntriggerBarricade());
             //flip barricade up here
             //do a rotation lerp && set a rotation trigger bool
             //use timer to set barricade to flip back to flat
@@ -134,8 +173,8 @@ public class Level5Controller : MonoBehaviour
     {
         while (spawning)
         {
-            yield return new WaitForSeconds(delay);
-            trigger = Random.Range(0, triggers.Length - 1);
+            yield return new WaitForSeconds(spawnDelay);
+            trigger = Random.Range(0, triggers.Length);
             triggers[trigger].SetActive(true);
         }
     }
@@ -143,14 +182,13 @@ public class Level5Controller : MonoBehaviour
 
     IEnumerator PickUpWateringCan(GameObject wateringCan)
     {
-        watering = true;
         wateringCan.transform.parent = gameObject.transform;
         wateringCan.transform.localPosition = new Vector2(-1, 0);
         Debug.Log("picked up watering can");
         //lerp to rose position
         yield return new WaitForSeconds(delay);
         StartCoroutine(Lerp(gameObject.transform.position, rose.transform.position));
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(2.0f);
         wateringCan.transform.SetParent(null);
         ResetWateringCan();
         StartCoroutine(Lerp(transform.position, princeOriginalPos));
@@ -167,11 +205,54 @@ public class Level5Controller : MonoBehaviour
         //reset watering can to original location once rose is watered
     }
 
+
+    IEnumerator UntriggerSpeechBubble()
+    {
+        yield return new WaitForSeconds(10.0f);
+        if (!roseIsWatered)
+        {
+            UpdateHealthBar();
+            speechBubble.SetActive(false);
+        }
+    }
+
+
     IEnumerator UntriggerSpikes()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(triggerDelay);
         spikes.Untrigger();
         Debug.Log("untriggered");
+    }
+
+
+    IEnumerator UntriggerBarricade()
+    {
+        yield return new WaitForSeconds(triggerDelay);
+        wall.Untrigger();
+        Debug.Log("untriggered");
+    }
+
+    public void UpdateHealthBar()
+    {
+        if (health > 0)
+        {
+            health -= 1;
+        }
+        if (healthBar != null && healthBar.transform.GetChild(health) != null)
+        {
+            healthBar.transform.GetChild(health).gameObject.SetActive(false);
+        }
+    }
+
+    public void ResetHealthBar()
+    {
+        for (int i = 0; i < health; i++)
+        {
+            if (healthBar != null && healthBar.transform.GetChild(i) != null)
+            {
+                healthBar.transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
     }
 
 
@@ -184,10 +265,14 @@ public class Level5Controller : MonoBehaviour
 
     public void Retry()
     {
+
+        health = 4;
+        ResetHealthBar();
         retryButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         blackUIPanel.SetActive(false);
         SceneManager.LoadScene("Level5");
+    
     }
 
     public void Ending()
