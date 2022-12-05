@@ -222,7 +222,7 @@ public class Level2Controller : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level5");
     }
 
 }
