@@ -45,7 +45,7 @@ public class Level2Controller : MonoBehaviour
         xBound = -8.0f;
         yBound = 3.0f;
         lerp = 8.0f;
-        shrink = 50.0f;
+        shrink = 3.0f;
         health = 4;
         flickerCount = 6;
         flickerDuration = 0.2f;
@@ -161,10 +161,12 @@ public class Level2Controller : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, time / shrink);
             transform.position = Vector2.Lerp(transform.position, planet.transform.position, time / shrink);
             time += Time.deltaTime;
+            Debug.Log("Did a thing: " + shrink + " " + time);
             yield return null;
         }
         transform.localScale = targetScale;
-        NextLevel();
+        Debug.Log("Done");
+        SceneManager.LoadScene("Level5");
     }
 
     public void IdentifyPlanet()
@@ -222,7 +224,7 @@ public class Level2Controller : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level5");
     }
 
 }
