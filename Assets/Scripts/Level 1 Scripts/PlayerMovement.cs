@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
             }
             PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
-            timeIsUp.TimeUp();
+            timeIsUp.StartCoroutine("TimeUp");
         }
     }
 
