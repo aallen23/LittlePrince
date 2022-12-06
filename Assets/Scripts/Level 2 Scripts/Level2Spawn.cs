@@ -48,6 +48,7 @@ public class Level2Spawn : MonoBehaviour
 
     IEnumerator SpawnIn()
     {
+        yield return new WaitForSeconds(3.0f);
         spawn = true;
         while (spawn)
         {

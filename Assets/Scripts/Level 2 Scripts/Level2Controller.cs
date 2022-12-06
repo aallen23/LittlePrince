@@ -24,6 +24,7 @@ public class Level2Controller : MonoBehaviour
     public GameObject planet;
 
     public int health;
+    private int healthHS;
     public bool immune;
     public GameObject gm;
     public GameObject spawnHolder;
@@ -40,12 +41,15 @@ public class Level2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthHS = 4;
+        PlayerPrefs.SetInt("Lvl2Health", healthHS);
+        PlayerPrefs.SetInt("Lvl2HighScore", health);
         spriteRenderer = GetComponent<SpriteRenderer>();
         screenHeight = Screen.height;
         xBound = -8.0f;
         yBound = 3.0f;
         lerp = 8.0f;
-        shrink = 3.0f;
+        shrink = 10.0f;
         health = 4;
         flickerCount = 6;
         flickerDuration = 0.2f;
@@ -64,13 +68,13 @@ public class Level2Controller : MonoBehaviour
 
         if (!timer.timer)
         {
-            //if (flowerScore > flowerHS)
-            //{
-            //    flowerHS = flowerScore;
-            //    PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
-            //}
-            //PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
-            //timeIsUp.TimeUp();
+
+            if(health > healthHS)
+            {
+                healthHS = health;
+                PlayerPrefs.SetInt("Lvl2HighScore", healthHS);
+            }
+            PlayerPrefs.SetInt("Lvl2Health", health);
             IdentifyPlanet();
             StartCoroutine(Shrink());
         }
@@ -161,11 +165,9 @@ public class Level2Controller : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, time / shrink);
             transform.position = Vector2.Lerp(transform.position, planet.transform.position, time / shrink);
             time += Time.deltaTime;
-            Debug.Log("Did a thing: " + shrink + " " + time);
             yield return null;
         }
         transform.localScale = targetScale;
-        Debug.Log("Done");
         SceneManager.LoadScene("Level5");
     }
 
