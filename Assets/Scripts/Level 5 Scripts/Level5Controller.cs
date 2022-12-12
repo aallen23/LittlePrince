@@ -55,9 +55,9 @@ public class Level5Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthHS = 4;
-        PlayerPrefs.SetInt("Lvl2Health", healthHS);
-        PlayerPrefs.SetInt("Lvl2HighScore", health);
+        healthHS = 0;
+        PlayerPrefs.SetInt("Lvl5Health", health);
+        PlayerPrefs.SetInt("Lvl5HighScore", healthHS);
         health = 4;
         lerp = 1.0f;
         moving = false;
