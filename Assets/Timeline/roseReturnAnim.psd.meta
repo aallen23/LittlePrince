@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654db336666b7fe4390df0e8631e1df0
+guid: b3721869f01d70f46b42a6ab6cae80d5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,79 +129,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: princeCanIdleAnim_0
+      name: roseReturnAnim_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 0
-        width: 433
-        height: 502
+        x: 64
+        y: 131
+        width: 103
+        height: 241
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 69ad7cb3bda311240b58636c049f1a02
-      internalID: -1318121155
-=======
-      spriteID: c38d5824ac22ec84b9293d9155cea733
-      internalID: -1971597500
->>>>>>> Anthony2
+      spriteID: 059e8a422acb588428803ca6d735931e
+      internalID: 1471361173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_1
+      name: roseReturnAnim_1
       rect:
         serializedVersion: 2
-        x: 545
-        y: 0
-        width: 445
-        height: 502
+        x: 305
+        y: 131
+        width: 94
+        height: 239
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 182620ec3828e8a40b950fb05186cf85
-      internalID: -518539045
-=======
-      spriteID: 68ddf17bae1308341a60cbfa7c1ab81c
-      internalID: 1422501558
->>>>>>> Anthony2
+      spriteID: 9eb391864ca18af4bbd24c2c7639c44b
+      internalID: -1091769783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_2
+      name: roseReturnAnim_2
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 0
-        width: 433
-        height: 502
+        x: 521
+        y: 131
+        width: 90
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 60e171ebbf103334ca67af0095b281e1
-      internalID: 1782591392
-=======
-      spriteID: f100f79014ae5f2479bc646110864f51
-      internalID: -1378951400
->>>>>>> Anthony2
+      spriteID: 498bf307533331249bfec18dca8428d8
+      internalID: -1883512232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseReturnAnim_3
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 131
+        width: 86
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85a3013bbf1ac14787b275f2e203f3c
+      internalID: 125011057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseReturnAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 131
+        width: 53
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03deadd2a3d2c3049ba0267cb9f2b628
+      internalID: 1051182884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseReturnAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 131
+        width: 97
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a6f3c2d7aaa8343b4673306209c2f6
+      internalID: 803745335
       vertices: []
       indices: 
       edges: []
@@ -217,15 +265,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<< HEAD
-      princeCanIdleAnim_2: 1782591392
-      princeCanIdleAnim_0: -1318121155
-      princeCanIdleAnim_1: -518539045
-=======
-      princeCanIdleAnim_2: -1378951400
-      princeCanIdleAnim_0: -1971597500
-      princeCanIdleAnim_1: 1422501558
->>>>>>> Anthony2
+      roseReturnAnim_3: 125011057
+      roseReturnAnim_5: 803745335
+      roseReturnAnim_4: 1051182884
+      roseReturnAnim_0: 1471361173
+      roseReturnAnim_1: -1091769783
+      roseReturnAnim_2: -1883512232
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

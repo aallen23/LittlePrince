@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654db336666b7fe4390df0e8631e1df0
+guid: 3684141666411ad41930d4d868f75a52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,79 +129,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: princeCanIdleAnim_0
+      name: speechBubbleAnim_3
       rect:
         serializedVersion: 2
-        x: 39
-        y: 0
-        width: 433
-        height: 502
+        x: 990
+        y: 83
+        width: 341
+        height: 302
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 69ad7cb3bda311240b58636c049f1a02
-      internalID: -1318121155
-=======
-      spriteID: c38d5824ac22ec84b9293d9155cea733
-      internalID: -1971597500
->>>>>>> Anthony2
+      spriteID: 249da4b10d24a434d9a0cf3cf0e40a4a
+      internalID: -1687629082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_1
+      name: speechBubbleAnim_2
       rect:
         serializedVersion: 2
-        x: 545
-        y: 0
-        width: 445
-        height: 502
+        x: 813
+        y: 168
+        width: 107
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 182620ec3828e8a40b950fb05186cf85
-      internalID: -518539045
-=======
-      spriteID: 68ddf17bae1308341a60cbfa7c1ab81c
-      internalID: 1422501558
->>>>>>> Anthony2
+      spriteID: cd13c2788b05d40459eda78a11531846
+      internalID: 593315097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_2
+      name: speechBubbleAnim_0
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 0
-        width: 433
-        height: 502
+        x: 225
+        y: 211
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 60e171ebbf103334ca67af0095b281e1
-      internalID: 1782591392
-=======
-      spriteID: f100f79014ae5f2479bc646110864f51
-      internalID: -1378951400
->>>>>>> Anthony2
+      spriteID: ecb7895df9094d34dbfb17be2605c097
+      internalID: -1811417174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: speechBubbleAnim_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 190
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e909a701572703645b61326f63ae2175
+      internalID: 599467852
       vertices: []
       indices: 
       edges: []
@@ -217,15 +223,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<< HEAD
-      princeCanIdleAnim_2: 1782591392
-      princeCanIdleAnim_0: -1318121155
-      princeCanIdleAnim_1: -518539045
-=======
-      princeCanIdleAnim_2: -1378951400
-      princeCanIdleAnim_0: -1971597500
-      princeCanIdleAnim_1: 1422501558
->>>>>>> Anthony2
+      speechBubbleAnim_0: -1811417174
+      speechBubbleAnim_4: -1019535761
+      speechBubbleAnim_3: -1687629082
+      speechBubbleAnim_5: -1008975604
+      speechBubbleAnim_8: -1249685575
+      speechBubbleAnim_1: 599467852
+      speechBubbleAnim_2: 593315097
+      speechBubbleAnim_9: -754375331
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

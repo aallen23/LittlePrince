@@ -143,14 +143,23 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: d59006044b054a04da4b97d5203fe32d
       internalID: 1206151734
+=======
+      spriteID: bd28ffd8349453d419bf9b1a9f15417c
+      internalID: -875421984
+>>>>>>> Anthony2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<< HEAD
       name: princeCanWalkingAnim_4
+=======
+      name: princeCanWalkingAnim_1
+>>>>>>> Anthony2
       rect:
         serializedVersion: 2
         x: 545
@@ -164,14 +173,23 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: cb96762dcc6f75349adf5f6efa3911f4
       internalID: -480678150
+=======
+      spriteID: bdb3059362d098540b1fd4f95fe942aa
+      internalID: 1687821604
+>>>>>>> Anthony2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<< HEAD
       name: princeCanWalkingAnim_9
+=======
+      name: princeCanWalkingAnim_2
+>>>>>>> Anthony2
       rect:
         serializedVersion: 2
         x: 1065
@@ -185,8 +203,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 971a5349a5c660849b5dfa24c0e63a70
       internalID: -1875118770
+=======
+      spriteID: e8d6729dbcc655845a84f18157c2c51e
+      internalID: 1444879289
+>>>>>>> Anthony2
       vertices: []
       indices: 
       edges: []
@@ -202,6 +225,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< HEAD
       princeCanWalkingAnim_12: -1205950596
       princeCanWalkingAnim_11: -1131534288
       princeCanWalkingAnim_7: -1862884928
@@ -215,6 +239,19 @@ TextureImporter:
       princeCanWalkingAnim_8: 1975907298
       princeCanWalkingAnim_9: -1875118770
       princeCanWalkingAnim_4: -480678150
+=======
+      princeCanWalkingAnim_12: -794311957
+      princeCanWalkingAnim_11: -1614716103
+      princeCanWalkingAnim_7: 437730892
+      princeCanWalkingAnim_6: 929545388
+      princeCanWalkingAnim_5: -1161151611
+      princeCanWalkingAnim_3: 96150715
+      princeCanWalkingAnim_10: 58560923
+      princeCanWalkingAnim_1: 1687821604
+      princeCanWalkingAnim_2: 1444879289
+      princeCanWalkingAnim_0: -875421984
+      princeCanWalkingAnim_8: -1995669961
+>>>>>>> Anthony2
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

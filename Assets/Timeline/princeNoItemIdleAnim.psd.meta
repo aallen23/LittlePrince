@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654db336666b7fe4390df0e8631e1df0
+guid: 9449be8b7770b6245bba27b6e18a610a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: princeCanIdleAnim_0
+      name: princeNoItemIdleAnim_0
       rect:
         serializedVersion: 2
-        x: 39
+        x: 96
         y: 0
-        width: 433
+        width: 320
         height: 502
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,24 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 69ad7cb3bda311240b58636c049f1a02
-      internalID: -1318121155
-=======
-      spriteID: c38d5824ac22ec84b9293d9155cea733
-      internalID: -1971597500
->>>>>>> Anthony2
+      spriteID: af32db707fab7f0439e6b18d5d32430f
+      internalID: -2081132353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_1
+      name: princeNoItemIdleAnim_1
       rect:
         serializedVersion: 2
-        x: 545
+        x: 603
         y: 0
-        width: 445
+        width: 330
         height: 502
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -169,24 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 182620ec3828e8a40b950fb05186cf85
-      internalID: -518539045
-=======
-      spriteID: 68ddf17bae1308341a60cbfa7c1ab81c
-      internalID: 1422501558
->>>>>>> Anthony2
+      spriteID: 695250abf38100341a15e92d3cfabaed
+      internalID: -959446433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_2
+      name: princeNoItemIdleAnim_2
       rect:
         serializedVersion: 2
-        x: 1063
+        x: 1120
         y: 0
-        width: 433
+        width: 320
         height: 502
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -195,13 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 60e171ebbf103334ca67af0095b281e1
-      internalID: 1782591392
-=======
-      spriteID: f100f79014ae5f2479bc646110864f51
-      internalID: -1378951400
->>>>>>> Anthony2
+      spriteID: dc48c6ebe895a0d4fa800ee1ed580bce
+      internalID: -2091546662
       vertices: []
       indices: 
       edges: []
@@ -217,15 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<< HEAD
-      princeCanIdleAnim_2: 1782591392
-      princeCanIdleAnim_0: -1318121155
-      princeCanIdleAnim_1: -518539045
-=======
-      princeCanIdleAnim_2: -1378951400
-      princeCanIdleAnim_0: -1971597500
-      princeCanIdleAnim_1: 1422501558
->>>>>>> Anthony2
+      princeNoItemIdleAnim_2: -2091546662
+      princeNoItemIdleAnim_1: -959446433
+      princeNoItemIdleAnim_0: -2081132353
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

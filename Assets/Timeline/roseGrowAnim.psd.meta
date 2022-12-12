@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654db336666b7fe4390df0e8631e1df0
+guid: d7dbbf242484e9f4aacc3377a2766ded
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,79 +129,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: princeCanIdleAnim_0
+      name: roseGrowAnim_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 0
-        width: 433
-        height: 502
+        x: 77
+        y: 131
+        width: 85
+        height: 241
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 69ad7cb3bda311240b58636c049f1a02
-      internalID: -1318121155
-=======
-      spriteID: c38d5824ac22ec84b9293d9155cea733
-      internalID: -1971597500
->>>>>>> Anthony2
+      spriteID: c4902c82f08a34a46b040527dc9a50c4
+      internalID: 1657117888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_1
+      name: roseGrowAnim_1
       rect:
         serializedVersion: 2
-        x: 545
-        y: 0
-        width: 445
-        height: 502
+        x: 321
+        y: 131
+        width: 34
+        height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 182620ec3828e8a40b950fb05186cf85
-      internalID: -518539045
-=======
-      spriteID: 68ddf17bae1308341a60cbfa7c1ab81c
-      internalID: 1422501558
->>>>>>> Anthony2
+      spriteID: a97e9069a1e246549a50b7002dc4c447
+      internalID: 150896863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: princeCanIdleAnim_2
+      name: roseGrowAnim_2
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 0
-        width: 433
-        height: 502
+        x: 533
+        y: 131
+        width: 74
+        height: 244
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 60e171ebbf103334ca67af0095b281e1
-      internalID: 1782591392
-=======
-      spriteID: f100f79014ae5f2479bc646110864f51
-      internalID: -1378951400
->>>>>>> Anthony2
+      spriteID: 5c74bc1593fbce646af93560538b701d
+      internalID: 743489747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseGrowAnim_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 131
+        width: 62
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d29c6f778916cd48a14fd85396fdbd0
+      internalID: 1642068971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseGrowAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 131
+        width: 79
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81632177eacdefa4ca00a7cb27dd43d4
+      internalID: 1756590584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roseGrowAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 131
+        width: 103
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbcaaf65c31d2340b58fbae0763b909
+      internalID: 432582017
       vertices: []
       indices: 
       edges: []
@@ -217,15 +265,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<< HEAD
-      princeCanIdleAnim_2: 1782591392
-      princeCanIdleAnim_0: -1318121155
-      princeCanIdleAnim_1: -518539045
-=======
-      princeCanIdleAnim_2: -1378951400
-      princeCanIdleAnim_0: -1971597500
-      princeCanIdleAnim_1: 1422501558
->>>>>>> Anthony2
+      roseGrowAnim_4: 1756590584
+      roseGrowAnim_3: 1642068971
+      roseGrowAnim_2: 743489747
+      roseGrowAnim_1: 150896863
+      roseGrowAnim_0: 1657117888
+      roseGrowAnim_5: 432582017
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
