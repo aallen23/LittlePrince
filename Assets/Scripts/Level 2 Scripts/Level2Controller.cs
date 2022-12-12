@@ -41,7 +41,7 @@ public class Level2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthHS = 4;
+        healthHS = 0;
         PlayerPrefs.SetInt("Lvl2Health", healthHS);
         PlayerPrefs.SetInt("Lvl2HighScore", health);
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,7 +49,7 @@ public class Level2Controller : MonoBehaviour
         xBound = -8.0f;
         yBound = 3.0f;
         lerp = 8.0f;
-        shrink = 10.0f;
+        shrink = 3.0f;
         health = 4;
         flickerCount = 6;
         flickerDuration = 0.2f;
@@ -168,7 +168,7 @@ public class Level2Controller : MonoBehaviour
             yield return null;
         }
         transform.localScale = targetScale;
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level3");
     }
 
     public void IdentifyPlanet()
