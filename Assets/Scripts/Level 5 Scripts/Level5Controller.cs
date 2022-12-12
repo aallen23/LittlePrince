@@ -122,7 +122,7 @@ public class Level5Controller : MonoBehaviour
         Debug.Log("collided");
         if (other.gameObject.CompareTag("Watering Can") && roseNeedsWatering)
         {
-            animator.SetBool("hasCan", true);
+            
             carrying = true;
             watering = true;
             wateringCan = other.gameObject;
@@ -190,6 +190,7 @@ public class Level5Controller : MonoBehaviour
         wateringCan.transform.parent = gameObject.transform;
         wateringCan.transform.localPosition = new Vector2(-1, 0);
         Debug.Log("picked up watering can");
+        animator.SetBool("hasCan", true);
         //lerp to rose position
         yield return new WaitForSeconds(delay);
         StartCoroutine(Lerp(gameObject.transform.position, rose.transform.position));
