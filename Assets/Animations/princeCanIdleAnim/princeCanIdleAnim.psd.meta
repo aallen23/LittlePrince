@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69ad7cb3bda311240b58636c049f1a02
-      internalID: -1318121155
+      spriteID: c38d5824ac22ec84b9293d9155cea733
+      internalID: -1971597500
       vertices: []
       indices: 
       edges: []
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 182620ec3828e8a40b950fb05186cf85
-      internalID: -518539045
+      spriteID: 68ddf17bae1308341a60cbfa7c1ab81c
+      internalID: 1422501558
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60e171ebbf103334ca67af0095b281e1
-      internalID: 1782591392
+      spriteID: f100f79014ae5f2479bc646110864f51
+      internalID: -1378951400
       vertices: []
       indices: 
       edges: []
@@ -202,9 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      princeCanIdleAnim_2: 1782591392
-      princeCanIdleAnim_0: -1318121155
-      princeCanIdleAnim_1: -518539045
+      princeCanIdleAnim_2: -1378951400
+      princeCanIdleAnim_0: -1971597500
+      princeCanIdleAnim_1: 1422501558
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
