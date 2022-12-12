@@ -143,50 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd3ec868abefa441a2ded59c8d2828a
-      internalID: -1090269032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: princeNoItemIdleAnim_1
-      rect:
-        serializedVersion: 2
-        x: 603
-        y: 0
-        width: 330
-        height: 502
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e2c3e5700e8eb74f852b55d77c79605
-      internalID: -1528454073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: princeNoItemIdleAnim_2
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 320
-        height: 502
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20aa85b23573fb74b8726d456cea12ab
-      internalID: 1347050592
+      spriteID: baaa3062a30f80ce0800000000000000
+      internalID: -1438635948408329557
       vertices: []
       indices: 
       edges: []
@@ -194,7 +152,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -202,9 +160,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      princeNoItemIdleAnim_2: 1347050592
-      princeNoItemIdleAnim_1: -1528454073
-      princeNoItemIdleAnim_0: -1090269032
+      princeNoItemIdleAnim_0: -1438635948408329557
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
