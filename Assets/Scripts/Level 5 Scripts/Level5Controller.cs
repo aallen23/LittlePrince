@@ -19,6 +19,7 @@ public class Level5Controller : MonoBehaviour
     public float lerp;
     public bool moving;
     public bool spawning;
+    public Animator animator;
 
     private GameObject wateringCan;
     public GameObject rose;
@@ -73,8 +74,9 @@ public class Level5Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(speechBubble.activeInHierarchy == true)
+        animator.SetBool("isWalking", false);
+        animator.SetBool("hasCan", false);
+        if (speechBubble.activeInHierarchy == true)
         {
             roseNeedsWatering = true;
             StartCoroutine(UntriggerSpeechBubble());
@@ -87,6 +89,7 @@ public class Level5Controller : MonoBehaviour
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
+                    animator.SetBool("isWalking", true);
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
                     StartCoroutine(Lerp(gameObject.transform.position, touchPos));
                     Debug.Log("Told to move");
@@ -119,6 +122,7 @@ public class Level5Controller : MonoBehaviour
         Debug.Log("collided");
         if (other.gameObject.CompareTag("Watering Can") && roseNeedsWatering)
         {
+            animator.SetBool("hasCan", true);
             carrying = true;
             watering = true;
             wateringCan = other.gameObject;
@@ -160,6 +164,7 @@ public class Level5Controller : MonoBehaviour
         float time = 0;
         while (time < lerp)
         {
+            
             moving = true;
             transform.position = Vector3.Lerp(startPos, targetPos, time / lerp);
             time += Time.deltaTime;
