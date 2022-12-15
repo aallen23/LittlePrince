@@ -50,7 +50,6 @@ public class Level5Controller : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
     public GameObject blackUIPanel;
-    public Animator animator;
 
 
     // Start is called before the first frame update
