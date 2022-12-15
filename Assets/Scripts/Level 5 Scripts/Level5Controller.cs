@@ -82,7 +82,7 @@ public class Level5Controller : MonoBehaviour
     void Update()
     {
         animator.SetBool("isWalking", false);
-        animator.SetBool("hasCan", false);
+        animator.SetBool("isWatering", false);
         if (speechBubble.activeInHierarchy == true)
         {
             roseNeedsWatering = true;
@@ -96,7 +96,7 @@ public class Level5Controller : MonoBehaviour
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
-                    animator.SetBool("isWalking", true);
+                   
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
                     StartCoroutine(Lerp(gameObject.transform.position, touchPos));
                     Debug.Log("Told to move");
@@ -116,6 +116,15 @@ public class Level5Controller : MonoBehaviour
         if (health == 0)
         {
             GameOver();
+        }
+
+        if (watering)
+        {
+            animator.SetBool("isWatering", true);
+        }
+        else if (!watering)
+        {
+            animator.SetBool("isWatering", false);
         }
 
         if (!timer.timer)
@@ -216,7 +225,6 @@ public class Level5Controller : MonoBehaviour
         wateringCan.transform.parent = gameObject.transform;
         wateringCan.transform.localPosition = new Vector2(-1, 0);
         Debug.Log("picked up watering can");
-        animator.SetBool("hasCan", true);
         //lerp to rose position
         yield return new WaitForSeconds(delay);
         StartCoroutine(Lerp(gameObject.transform.position, rose.transform.position));

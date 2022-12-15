@@ -2062,6 +2062,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1005459159}
     - target: {fileID: 6323102572911668086, guid: 13cce00ed2a1ef04d812d96d2754d5a0, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1431663106}
+    - target: {fileID: 6323102572911668086, guid: 13cce00ed2a1ef04d812d96d2754d5a0, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2001607938}
@@ -2252,6 +2256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e15441516c0f246a2de91cb18f695a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1431663106 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6323102572911668075, guid: 13cce00ed2a1ef04d812d96d2754d5a0, type: 3}
+  m_PrefabInstance: {fileID: 1255586940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1677369957
 GameObject:
   m_ObjectHideFlags: 0
