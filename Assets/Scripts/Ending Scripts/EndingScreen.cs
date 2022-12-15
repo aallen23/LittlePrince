@@ -31,6 +31,12 @@ public class EndingScreen : MonoBehaviour
         totalFlowers.text = "Flowers: " + PlayerPrefs.GetInt("FlowerCurrent");
         bestFlowers.text = "Best: " + PlayerPrefs.GetInt("FlowerHighScore");
 
+        totalHealthT.text = "Health: " + PlayerPrefs.GetInt("Lvl2Health");
+        bestHealthT.text = "Best: " + PlayerPrefs.GetInt("Lvl2HighScore");
+
+        totalHealthF.text = "Health: " + PlayerPrefs.GetInt("Lvl5Health");
+        bestHealthF.text = "Best: " + PlayerPrefs.GetInt("Lvl5HighScore");
+
         //Add rest here
     }
 

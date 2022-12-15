@@ -38,30 +38,38 @@ public class Level5Controller : MonoBehaviour
     public bool watering;
     public bool roseNeedsWatering;
     public bool roseIsWatered;
+    public bool spikesUp;
 
     private Spikes spikes;
     private Barricade wall;
 
     public int health;
+    private int healthHS;
     public GameObject healthBar;
 
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
     public GameObject blackUIPanel;
+    public Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        healthHS = 0;
+        PlayerPrefs.SetInt("Lvl5Health", health);
+        PlayerPrefs.SetInt("Lvl5HighScore", healthHS);
         health = 4;
         lerp = 1.0f;
         moving = false;
         roseNeedsWatering = false;
         watering = false;
+        spikesUp = false;
         delay = 1.0f;
-        triggerDelay = 4.0f;
+        triggerDelay = 2.5f;
         spawnDelay = 6.0f;
         princeOriginalPos = transform.position;
+        animator = GetComponent<Animator>();
         spawning = true;
         StartCoroutine(Spawn());
         //start a coroutine that
@@ -97,6 +105,15 @@ public class Level5Controller : MonoBehaviour
             }
         }
 
+        if (moving)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else if (!moving)
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         if (health == 0)
         {
             GameOver();
@@ -104,12 +121,14 @@ public class Level5Controller : MonoBehaviour
 
         if (!timer.timer)
         {
-            //if (flowerScore > flowerHS)
-            //{
-            //    flowerHS = flowerScore;
-            //    PlayerPrefs.SetInt("FlowerHighScore", flowerHS);
-            //}
-            //PlayerPrefs.SetInt("FlowerCurrent", flowerScore);
+
+            if (health > healthHS)
+            {
+                healthHS = health;
+                PlayerPrefs.SetInt("Lvl5HighScore", healthHS);
+            }
+            PlayerPrefs.SetInt("Lvl5Health", health);
+
             //timeIsUp.TimeUp();
             Ending();
         }
@@ -131,10 +150,18 @@ public class Level5Controller : MonoBehaviour
         }
         if (other.CompareTag("Spikes"))
         {
-            spikes = other.gameObject.GetComponent<Spikes>();
-            spikes.TriggerSpikes();
-            Debug.Log("triggered");
-            StartCoroutine(UntriggerSpikes());
+            if (!spikesUp)
+            {
+                spikesUp = true;
+                spikes = other.gameObject.GetComponent<Spikes>();
+                if (spikes.triggered == false)
+                {
+                    spikes.TriggerSpikes();
+                    Debug.Log("triggered");
+                    StartCoroutine(UntriggerSpikes());
+                }
+            }
+
         }
         if (other.CompareTag("Flower") && carrying)
         {
@@ -227,6 +254,7 @@ public class Level5Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(triggerDelay);
         spikes.Untrigger();
+        spikesUp = false;
         Debug.Log("untriggered");
     }
 

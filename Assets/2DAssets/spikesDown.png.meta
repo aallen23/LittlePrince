@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a8b6dd0759059e4b982d701a6460b20
+guid: 97ce8e291c3ee114ab23af119138943d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,70 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: princeCanWalkingAnim_0
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 3
-        width: 430
-        height: 499
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d59006044b054a04da4b97d5203fe32d
-      internalID: 1206151734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: princeCanWalkingAnim_4
-      rect:
-        serializedVersion: 2
-        x: 545
-        y: 3
-        width: 445
-        height: 499
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb96762dcc6f75349adf5f6efa3911f4
-      internalID: -480678150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: princeCanWalkingAnim_9
-      rect:
-        serializedVersion: 2
-        x: 1065
-        y: 3
-        width: 430
-        height: 499
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 971a5349a5c660849b5dfa24c0e63a70
-      internalID: -1875118770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -201,23 +138,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      princeCanWalkingAnim_12: -1205950596
-      princeCanWalkingAnim_11: -1131534288
-      princeCanWalkingAnim_7: -1862884928
-      princeCanWalkingAnim_6: -1276210638
-      princeCanWalkingAnim_5: -262502441
-      princeCanWalkingAnim_3: 773991046
-      princeCanWalkingAnim_10: 665850385
-      princeCanWalkingAnim_1: 726233946
-      princeCanWalkingAnim_2: -1679551481
-      princeCanWalkingAnim_0: 1206151734
-      princeCanWalkingAnim_8: 1975907298
-      princeCanWalkingAnim_9: -1875118770
-      princeCanWalkingAnim_4: -480678150
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
